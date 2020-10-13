@@ -1,0 +1,46 @@
+<%- include("../includes/navigation.ejs") %>
+<div class="login card">
+    <div class="row">
+        <form action="/register" method="post" class="col s12">
+            <% if(errorMessage.length > 0) { %>
+                <div class="alert alert-dismissible alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><%= errorMessage %></strong>
+                  </div>
+            <% } %>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">title</i>
+                    <input class="<%= validationErrors.find(e => e.param === 'username') ? 'invalid' : '' %>" id="username" name="username" type="text" class="validate" value="<%= oldInput.username %>">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <div class="row">
+             <div class="input-field col s12">
+                 <i class="material-icons prefix">email</i>
+                 <input class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"  value="<%= oldInput.email %>" id="email" name="email" type="text" class="validate" novalidate>
+                 <label for="email">Email</label>
+             </div>
+            </div>
+            <div class="row">
+             <div class="input-field col s12">
+                 <i class="material-icons prefix">lock</i>
+                 <input class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>" value="<%= oldInput.password %>" id="password" name="password" type="password" class="validate">
+             <label for="password">Password</label>
+             </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock</i>
+                    <input class="<%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>" value="<%= oldInput.confirmPassword %>" id="confirmPassword" name="confirmPassword" type="password" class="validate">
+                <label for="confirmPassword">Confirm Password</label>
+                </div>
+               </div>
+               <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Signup
+             <i class="material-icons right">send</i>
+           </button>
+        </form>
+    </div>
+   </div>
+<%- include("../includes/footer.ejs") %>

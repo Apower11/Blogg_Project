@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="shortcut icon" href="/images/Logo.webp">
+    <title><%= pageTitle %></title>
+</head>
+<body>
+    <nav class="#263238 blue-grey darken-4">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo center">Blogg</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="/">Home</a></li>
+            <li><a href="/feed/careers">Careers</a></li>  
+            <li><a href="/feed/university">University</a></li>  
+            <li><a href="/feed/apprenticeships">Apprenticeships</a></li>
+            <% if(isAuthenticated) { %>
+              
+            <% } %>
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <% if(!isAuthenticated) { %>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/register">Register</a></li>
+            <% } %>
+            <% if(isAuthenticated) { %>
+              <li><a href="/admin/add-post">Add Post</a></li>
+              <li><a href="/admin/dashboard">Dashboard</a></li>
+              <li><a href="/admin/user-posts">Your Posts</a></li>
+            <li><a href="#"><%= user.username %></a></li>
+            <form class="logout" action="/logout" method="post">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Logout
+              </button>
+            </form>
+            <% } %>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo">
+        <img class="sidenav-image" src="/images/Logo.webp" alt="Blogg">
+        <li><a href="/">Home</a></li>
+            <li><a href="/feed/careers">Careers</a></li>  
+            <li><a href="/feed/university">University</a></li>  
+            <li><a href="/feed/apprenticeships">Apprenticeships</a></li>  
+            <% if(isAuthenticated) { %>
+              <li><a href="/admin/add-post">Add Post</a></li>
+              <li><form class="side-logout" action="/logout" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Logout
+                </button>
+              </form></li>
+              <% } %>
+              <% if(!isAuthenticated) { %>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+              <% } %>
+      </ul>

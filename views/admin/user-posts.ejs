@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/feed.css">
+<%- include("../includes/navigation.ejs") %>
+<% for(let post of posts) { %>
+    <div class="post row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title"><%= post.title %></span>
+              <small>Posted by <%=post.author %> on <%= post.postedAtRough %></small>
+            </div>
+            <div class="card-image">
+              <img src="/<%= post.imageUrl %>">
+            </div>
+            <div class="card-content">
+              <p><%= post.content %></p>
+            </div>
+            <div class="card-action">
+              <a href="/admin/user-post/<%=post._id %>">View Full Post</a>
+            </div>
+          </div>
+        </div>
+      </div>
+<% } if(posts.length <= 0) { %>
+    <h1>No posts</h1>
+<% } %>
+<%- include("../includes/footer.ejs") %>

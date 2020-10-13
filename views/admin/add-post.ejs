@@ -1,0 +1,53 @@
+<%- include("../includes/navigation.ejs") %>
+   <div class="card">
+    <% if(errorMessage.length > 0) { %>
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong><%= errorMessage %></strong>
+          </div>
+    <% } %>
+       <div class="row">
+           <form enctype="multipart/form-data" action="/admin/add-post" method="post" class="col s12">
+               <div class="row">
+                <div class="input-field col s12">
+                    <input class="<%= validationErrors.find(e => e.param === 'title') ? 'invalid' : '' %>" id="title" name="title" type="text" class="validate">
+                    <label for="title">Title</label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea class="<%= validationErrors.find(e => e.param === 'email') ? 'content' : '' %>" id="content" name="content" class="materialize-textarea"></textarea>
+                        <label for="content">Content</label>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="input-field col s12">
+                        <input id="imageUrl" name="imageUrl" type="text" class="validate">
+                        <label for="imageUrl">Image Url</label>
+                    </div>
+                </div> -->
+                <div class="row">
+                          <input name="image" id="image" type="file">
+                </div>
+                <div class="input-field col s12">
+                    <select id="category" name="category">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="careers">Careers</option>
+                      <option value="university">University</option>
+                      <option value="apprenticeships">Apprenticeships</option>
+                    </select>
+                    <label>Materialize Select</label>
+                  </div>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+           </form>
+       </div>
+   </div>
+<%- include("../includes/footer.ejs") %>
+<script>
+    $(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>

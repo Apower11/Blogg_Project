@@ -1,0 +1,9 @@
+.login {
+  width: 80vw !important;
+  margin-left: 10vw !important;
+}
+
+.invalid {
+  border-color: red;
+}
+/*# sourceMappingURL=login.css.map */

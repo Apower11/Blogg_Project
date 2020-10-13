@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAA;EACD,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,iBAAiB;EAC9B,eAAe,EAAE,iBAAiB;EAClC,MAAM,EAAE,YAAY;CAKvB;;AAVD,AAMI,KANC,CAMD,IAAI,CAAA;EACA,MAAM,EAAE,YAAY;EACpB,OAAO,EAAE,YAAY;CACxB;;AAGL,AACI,WADO,CACP,GAAG,CAAA;EACC,UAAU,EAAE,KAAK;CACpB",
+    "sources": [
+        "feed.scss"
+    ],
+    "names": [],
+    "file": "feed.css"
+}

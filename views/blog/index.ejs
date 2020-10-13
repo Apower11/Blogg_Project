@@ -1,0 +1,8 @@
+<%- include("../includes/navigation.ejs") %>
+<% if(path === "/") { %>
+    <%- include("./home.ejs") %>
+<% } %>
+<% if(path === "/feed") { %>
+    <%- include("./feed.ejs") %>
+<% } %>
+<%- include("../includes/footer.ejs") %>

@@ -1,0 +1,17 @@
+.post{
+    display: flex;
+    flex-flow: column;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    .col{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+.card-image{
+    img{
+        max-height: 100vh;
+    }
+}
