@@ -1,0 +1,23 @@
+<%- include("../includes/navigation.ejs") %>
+<div class="col s12 m7">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="/<%= post.imageUrl %>">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+            <h2 class="header"><%= post.title %></h2>
+          <p><%= post.content %></p>
+        </div>
+        <div class="card-action">
+            <small>Posted by <%=post.author %> on <%= post.postedAtRough %></small>
+            <form action="/delete-post/<%=post.id %>" method="post">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button class="waves-effect waves-light btn-large  #d50000 red accent-4" type="submit"><i class="material-icons left">delete</i>Delete Post</button>
+            </form>
+                <button class="waves-effect waves-light btn-large  #d50000 red accent-4" type="submit"><i class="material-icons left">edit</i><a href="/admin/edit-post/<%= post.id %>">Edit Post</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+<%- include("../includes/footer.ejs") %>

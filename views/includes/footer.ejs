@@ -1,0 +1,44 @@
+<footer class="page-footer #263238 blue-grey darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Blogg</h5>
+          <p class="grey-text text-lighten-4">A blog site where you can discuss anything career-related to help realise your full potential.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul class="nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/feed/careers">Careers</a></li>  
+            <li><a href="/feed/university">University</a></li>  
+            <li><a href="/feed/apprenticeships">Apprenticeships</a></li>  
+            <% if(isAuthenticated) { %>
+              <li><a href="/admin/add-post">Add Post</a></li>
+              
+              <% } %>
+              <% if(!isAuthenticated) { %>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+              <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2020 Blogg
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+$('.sidenav').sidenav();
+$('.parallax').parallax();
+});
+</script>
+</body>
+</html>

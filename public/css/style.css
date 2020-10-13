@@ -1,0 +1,64 @@
+.logout {
+  display: inline !important;
+}
+
+.avatar {
+  background-image: url("/Logo.webp");
+  min-height: 5vh !important;
+  min-width: 5vw !important;
+}
+
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.alert-dismissible {
+  padding-right: 4rem;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.sidenav-image {
+  max-height: 15vh;
+}
+
+.nav li a {
+  color: white;
+}
+
+.nav li a:hover {
+  text-decoration: underline;
+}
+
+.nav-active {
+  color: yellow;
+}
+/*# sourceMappingURL=style.css.map */

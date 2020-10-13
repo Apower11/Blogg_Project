@@ -1,0 +1,26 @@
+.post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  margin: 0 !important;
+}
+
+.post .col {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.card-image img {
+  max-height: 100vh;
+}
+/*# sourceMappingURL=feed.css.map */
